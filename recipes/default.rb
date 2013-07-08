@@ -26,11 +26,6 @@ if platform_family?("smartos")
   end
 end
 
-python_pip "supervisor" do
-  action :upgrade
-  version node['supervisor']['version'] if node['supervisor']['version']
-end
-
 directory node['supervisor']['dir'] do
   owner "root"
   group "root"
